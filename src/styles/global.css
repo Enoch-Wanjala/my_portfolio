@@ -1,15 +1,25 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap');
 @import "tailwindcss";
 
 :root {
   color-scheme: dark;
-  --ink: #101112;
-  --ink-deep: #0a0b0c;
-  --panel: #1f2022;
-  --panel-soft: #191a1c;
-  --line: rgba(255, 255, 255, .12);
-  --mint: #25c765;
-  --muted: #b5b8bd;
+  --background: #131315;
+  --surface: #131315;
+  --surface-container-lowest: #0e0e10;
+  --surface-container-low: #1c1b1d;
+  --surface-container: #201f22;
+  --surface-container-high: #2a2a2c;
+  --surface-container-highest: #353437;
+  --outline: #869585;
+  --outline-variant: #3d4a3d;
+  --primary: #4be277;
+  --primary-container: #22c55e;
+  --on-primary-container: #004b1e;
+  --on-background: #e5e1e4;
+  --on-surface: #e5e1e4;
+  --on-surface-variant: #bccbb9;
+  --secondary: #c6c6c7;
+  --error: #ffb4ab;
   --hero: clamp(3rem, 7.3vw, 5.85rem);
   --title: clamp(2.25rem, 4.8vw, 4.15rem);
   --title-sm: clamp(2rem, 3.7vw, 3rem);
@@ -24,7 +34,7 @@
 }
 
 html {
-  background: var(--ink);
+  background: var(--background);
   scroll-behavior: smooth;
 }
 
@@ -32,9 +42,13 @@ body {
   margin: 0;
   min-width: 320px;
   overflow-x: hidden;
-  background: var(--ink);
-  color: #f2f2f3;
-  font-family: 'Inter Tight', ui-sans-serif, system-ui, sans-serif;
+  background:
+    radial-gradient(circle at 1px 1px, rgba(39, 39, 42, .75) 1px, transparent 0),
+    linear-gradient(90deg, transparent, rgba(74, 225, 118, .035), transparent),
+    var(--background);
+  background-size: 40px 40px, 100% 100%, auto;
+  color: var(--on-background);
+  font-family: Geist, ui-sans-serif, system-ui, sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
@@ -62,13 +76,13 @@ a:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 2px solid var(--mint);
+  outline: 2px solid var(--primary);
   outline-offset: 4px;
 }
 
 ::selection {
-  background: var(--mint);
-  color: var(--ink);
+  background: var(--primary);
+  color: #002109;
 }
 
 @layer utilities {
@@ -86,6 +100,30 @@ select:focus-visible {
 }
 
 @layer components {
+  .glass-panel {
+    background: rgba(24, 24, 27, .7);
+    border: 1px solid #27272a;
+    backdrop-filter: blur(12px);
+  }
+
+  .terminal-glow {
+    box-shadow: 0 0 20px rgba(34, 197, 94, .1);
+  }
+
+  .scanline {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scanline::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(to bottom, transparent 50%, rgba(34, 197, 94, .05) 50%);
+    background-size: 100% 4px;
+  }
+
   .btn {
     position: relative;
     isolation: isolate;
@@ -95,10 +133,11 @@ select:focus-visible {
     justify-content: center;
     gap: .75rem;
     overflow: hidden;
-    padding-inline: 1.65rem;
-    font-size: .92rem;
+    border-radius: .125rem;
+    padding-inline: 1.75rem;
+    font-size: .95rem;
     font-weight: 800;
-    transition: transform .25s ease, background .25s ease, border-color .25s ease, color .25s ease;
+    transition: transform .2s ease, filter .2s ease, background .2s ease, border-color .2s ease, color .2s ease;
   }
 
   .btn::after {
@@ -106,13 +145,14 @@ select:focus-visible {
     position: absolute;
     inset: 0;
     z-index: -1;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .16), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .18), transparent);
     transform: translateX(-120%);
     transition: transform .45s ease;
   }
 
   .btn:hover {
-    transform: translateY(-2px);
+    filter: brightness(1.08);
+    transform: translateY(-1px);
   }
 
   .btn:hover::after {
@@ -120,62 +160,70 @@ select:focus-visible {
   }
 
   .nav-link {
+    color: var(--on-surface);
     font-size: .94rem;
-    font-weight: 800;
-    color: #f4f4f5;
+    font-weight: 700;
     transition: color .2s ease;
   }
 
   .nav-link:hover {
-    color: var(--mint);
+    color: var(--primary);
   }
 
   .eyebrow {
-    font-family: 'JetBrains Mono', ui-monospace, monospace;
-    color: var(--mint);
-    font-size: .72rem;
+    color: var(--primary);
+    font-family: 'Space Mono', ui-monospace, monospace;
+    font-size: .75rem;
     font-weight: 700;
-    letter-spacing: .12em;
+    letter-spacing: .05em;
+    line-height: 1;
     text-transform: uppercase;
   }
 
   .terminal-card {
-    border: 1px solid var(--line);
+    border: 1px solid #27272a;
     background:
-      linear-gradient(rgba(37, 199, 101, .03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(37, 199, 101, .03) 1px, transparent 1px),
-      var(--panel-soft);
+      linear-gradient(rgba(74, 225, 118, .035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(74, 225, 118, .035) 1px, transparent 1px),
+      rgba(24, 24, 27, .72);
     background-size: 10px 10px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 20px rgba(34, 197, 94, .1);
   }
 
   .field {
     width: 100%;
-    border: 1px solid rgba(255, 255, 255, .12);
-    background: #0c0d0e;
+    border: 1px solid #27272a;
+    border-radius: .125rem;
+    background: var(--surface-container-lowest);
     padding: 1.15rem 1.1rem;
-    color: white;
+    color: var(--on-surface);
     transition: border-color .2s ease, box-shadow .2s ease;
   }
 
+  .field::placeholder {
+    color: rgba(229, 225, 228, .74);
+  }
+
   .field:focus {
-    border-color: var(--mint);
-    box-shadow: 0 0 0 4px rgba(37, 199, 101, .12);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(74, 225, 118, .12);
     outline: none;
   }
 
   .form-control {
     display: grid;
     gap: .65rem;
-    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    color: rgba(188, 203, 185, .62);
+    font-family: 'Space Mono', ui-monospace, monospace;
     font-size: .72rem;
-    letter-spacing: .12em;
+    letter-spacing: .05em;
     text-transform: uppercase;
-    color: #6e737b;
   }
 
   .form-control span {
-    color: #fca5a5;
-    font-family: 'Inter Tight', sans-serif;
+    color: var(--error);
+    font-family: Geist, sans-serif;
     font-size: .85rem;
     letter-spacing: 0;
     text-transform: none;
@@ -198,5 +246,3 @@ select:focus-visible {
     transition-duration: .01ms !important;
   }
 }
-
-

@@ -6,37 +6,36 @@ export const projects: Project[] = [
     title: 'Quad Shades',
     category: 'Web Architecture',
     description:
-      'Advanced sunglasses e-commerce platform featuring immersive 3D product previews and a custom checkout flow optimized for core web vitals.',
-    image: '/project-quad.svg',
-    tags: ['React', 'Commerce', '3D'],
-    liveUrl: 'https://github.com/Enoch-Wanjala'
+      'Modern shade and outdoor-structure website with a premium hero, refined visual hierarchy, and conversion-focused calls to action.',
+    image: '/project-quad.png',
+    tags: ['React', 'Brand', 'Performance'],
+    liveUrl: 'https://www.quadshades.com/'
   },
   {
     title: 'Mashujaa Africa',
     category: 'Media & Streaming',
     description:
-      'A content-heavy production hub integrating live-streaming capabilities and interactive portfolio galleries for a leading creative agency.',
-    image: '/project-mashujaa.svg',
-    tags: ['Streaming', 'CMS', 'UX'],
+      'A cinematic production company platform presenting film, music, TV, and documentary services through immersive visual storytelling.',
+    image: '/project-mashujaa.png',
+    tags: ['Media', 'Brand', 'UX'],
     liveUrl: 'https://mashujaaafricaproductions.com/'
   },
   {
     title: 'Prescenca',
-    category: 'SaaS Dashboard',
+    category: 'SaaS Platform',
     description:
-      'A complex data visualization dashboard for real-time presence tracking and workforce management with modular component architecture.',
-    image: '/project-prescenca.svg',
-    tags: ['SaaS', 'Charts', 'TypeScript'],
+      'A clean healthcare SaaS landing experience for therapists, focused on early access, feature clarity, and accessible conversion flows.',
+    image: '/project-prescenca.png',
+    tags: ['SaaS', 'Healthcare', 'TypeScript'],
     liveUrl: 'https://prescenca.com/'
   },
   {
     title: 'Million Access Agency',
     category: 'Brand Platform',
     description:
-      'A high-conversion marketing platform using kinetic typography and premium motion to drive user engagement and storytelling.',
-    image: '/project-millions.svg',
-    tags: ['GSAP', 'Brand', 'Performance'],
+      'A relocation and travel platform for Kenya with strong hero messaging, service discovery, and trust-building visual presentation.',
+    image: '/project-million.png',
+    tags: ['Brand', 'Travel', 'Performance'],
     liveUrl: 'https://millionaccessagency.com/'
   }
 ];
-
