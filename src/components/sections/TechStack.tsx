@@ -1,30 +1,39 @@
 ﻿import { skills } from '../../data/skills';
-import { Card } from '../ui/Card';
 import { Reveal } from '../animations/Reveal';
 import { cn } from '../../utils/cn';
 
 export function TechStack() {
   return (
-    <section className="py-fluid-sm">
-      <div className="grid gap-10 lg:grid-cols-[.72fr_1.28fr]">
-        <Reveal>
-          <h2 className="text-title-sm font-black tracking-[-.055em]">Technical Stack</h2>
-          <p className="mt-5 max-w-md leading-8 text-muted">A curated selection of tools and technologies I use to deliver professional-grade software.</p>
-          <Card className="mt-8 font-mono text-sm italic">
-            <p className="text-mint">Current_Activity:</p>
-            <p className="mt-2 text-white">"Deepening knowledge in TypeScript architecture and WebGL shaders..."</p>
-          </Card>
+    <section className="mb-[clamp(5rem,8vw,8rem)]">
+      <div className="flex flex-col gap-12 md:flex-row">
+        <Reveal className="md:w-1/3">
+          <h2 className="mb-4 text-title-sm font-bold leading-[1.2] tracking-[-.03em] text-[#e5e1e4]">Technical Stack</h2>
+          <p className="mb-6 text-base leading-[1.6] text-muted">
+            A curated selection of tools and technologies I've mastered to deliver professional-grade software.
+          </p>
+          <div className="terminal-border rounded-lg bg-[#0e0e10] p-6">
+            <p className="mb-2 font-mono text-xs text-[#22c55e]">Current_Activity:</p>
+            <p className="font-mono text-xs italic leading-relaxed text-[#e5e1e4]">"Deepening knowledge in TypeScript architecture and WebGL shaders..."</p>
+          </div>
         </Reveal>
-        <Reveal className="grid auto-rows-fr grid-cols-2 gap-4 sm:grid-cols-3">
-          {skills.map((skill) => (
-            <div key={skill.name} className={cn('flex min-h-[4.2rem] items-center justify-center gap-3 rounded-[4px] border border-line bg-panel px-4 py-4 text-[.92rem] font-bold uppercase text-white transition hover:-translate-y-1 hover:border-mint', skill.featured && 'col-span-2 border-mint/70 text-mint')}>
-              <skill.icon className="text-mint" aria-hidden />
-              <span>{skill.name}</span>
-            </div>
-          ))}
+
+        <Reveal className="md:w-2/3">
+          <div className="flex flex-wrap gap-4">
+            {skills.map((skill) => (
+              <div
+                key={skill.name}
+                className={cn(
+                  'skill-chip terminal-border group flex items-center gap-3 rounded-lg bg-surface px-6 py-4 text-[#e5e1e4] transition-all duration-300',
+                  skill.featured && 'border-mint text-mint'
+                )}
+              >
+                <skill.icon className="text-xl text-mint transition-transform duration-300 group-hover:scale-110" aria-hidden />
+                <span className={cn('font-mono text-sm uppercase', skill.featured && 'text-mint')}>{skill.name}</span>
+              </div>
+            ))}
+          </div>
         </Reveal>
       </div>
     </section>
   );
 }
-

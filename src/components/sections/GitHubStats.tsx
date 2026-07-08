@@ -1,6 +1,4 @@
-﻿import { FiExternalLink, FiTerminal } from 'react-icons/fi';
-import { ButtonLink } from '../ui/Button';
-import { Card } from '../ui/Card';
+﻿import { FiExternalLink, FiMoreHorizontal, FiTerminal } from 'react-icons/fi';
 import { Reveal } from '../animations/Reveal';
 
 const rows = [
@@ -12,28 +10,50 @@ const rows = [
 
 export function GitHubStats() {
   return (
-    <Reveal>
-      <Card className="my-fluid grid items-center gap-12 p-8 sm:p-12 lg:grid-cols-[1.25fr_.75fr]">
-        <div>
-          <p className="eyebrow flex items-center gap-3"><FiTerminal /> github_engine</p>
-          <h2 className="mt-10 text-title-sm font-black tracking-[-.055em]">Code Beyond the Interface</h2>
-          <p className="mt-6 max-w-2xl leading-8 text-muted">I maintain strict coding standards and a commitment to continuous learning. Explore repositories to see how I solve complex engineering problems.</p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <ButtonLink to="/projects">Explore Repositories <FiExternalLink /></ButtonLink>
-            <span className="btn border border-line bg-black/40 text-white"><span className="size-3 rounded-full bg-mint" /> Daily Commits Tracked</span>
+    <section className="pb-fluid-sm">
+      <Reveal>
+        <div className="terminal-border relative flex flex-col items-center gap-12 overflow-hidden rounded-xl bg-[#1c1b1d] p-10 md:flex-row md:p-16">
+          <div className="pointer-events-none absolute inset-0 opacity-10" aria-hidden />
+
+          <div className="relative z-10 text-center md:w-2/3 md:text-left">
+            <div className="mb-6 flex items-center justify-center gap-4 md:justify-start">
+              <FiTerminal className="text-4xl text-mint" aria-hidden />
+              <span className="font-mono text-xs uppercase tracking-[.05em] text-muted">GITHUB_ENGINE</span>
+            </div>
+            <h2 className="mb-6 text-title-sm font-bold leading-[1.2] tracking-[-.03em] text-[#e5e1e4]">Code Beyond the Interface</h2>
+            <p className="mb-8 max-w-xl text-base leading-[1.6] text-muted">
+              I maintain strict coding standards and a commitment to continuous learning. Explore my public repositories to see how I tackle complex engineering problems, participate in open source, and document my progress.
+            </p>
+            <div className="flex flex-col justify-center gap-4 sm:flex-row md:justify-start">
+              <a className="inline-flex items-center justify-center gap-3 rounded-lg bg-[#22c55e] px-8 py-4 font-bold text-[#002109] transition-transform hover:scale-105" href="https://github.com/Enoch-Wanjala" target="_blank" rel="noreferrer">
+                <span>Explore Repositories</span>
+                <FiExternalLink aria-hidden />
+              </a>
+              <div className="terminal-border flex items-center gap-4 rounded-lg bg-[#0e0e10] px-6 py-4">
+                <div className="size-3 animate-pulse rounded-full bg-[#22c55e]" />
+                <span className="font-mono text-xs uppercase tracking-[.05em] text-[#e5e1e4]">Daily Commits Tracked</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative z-10 w-full md:w-1/3">
+            <div className="glass-panel terminal-border rounded-lg p-8 transition-transform duration-500 md:rotate-3 md:hover:rotate-0">
+              <div className="mb-6 flex items-center justify-between">
+                <span className="font-mono text-xs uppercase tracking-[.05em] text-mint">STATS.sh</span>
+                <FiMoreHorizontal className="text-muted" aria-hidden />
+              </div>
+              <div className="space-y-4">
+                {rows.map(([label, value], index) => (
+                  <div key={label} className={`flex justify-between ${index < rows.length - 1 ? 'border-b border-line pb-2' : ''}`}>
+                    <span className="font-mono text-xs uppercase tracking-[.05em] text-[#e5e1e4]">{label}</span>
+                    <span className="font-mono text-xs font-bold uppercase tracking-[.05em] text-mint">{value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
-        <div className="rotate-2 border border-line bg-ink p-7 font-mono text-xs uppercase shadow-card">
-          <p className="mb-6 flex justify-between text-mint">stats.sh <span>•••</span></p>
-          {rows.map(([label, value]) => (
-            <div key={label} className="flex justify-between border-b border-line py-4 last:border-0">
-              <span>{label}</span>
-              <span className="text-mint">{value}</span>
-            </div>
-          ))}
-        </div>
-      </Card>
-    </Reveal>
+      </Reveal>
+    </section>
   );
 }
-

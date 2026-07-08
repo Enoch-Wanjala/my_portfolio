@@ -100,6 +100,21 @@ select:focus-visible {
 }
 
 @layer components {
+
+  .terminal-border {
+    border: 1px solid #27272a;
+  }
+
+  .skill-chip:hover {
+    border-color: #22c55e;
+    color: #22c55e;
+    transform: translateY(-2px);
+  }
+
+  .animate-flicker {
+    animation: flicker 2s infinite;
+  }
+
   .glass-panel {
     background: rgba(24, 24, 27, .7);
     border: 1px solid #27272a;
@@ -230,6 +245,11 @@ select:focus-visible {
   }
 }
 
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .7; }
+}
+
 @media (min-width: 1024px) {
   .home-hero-lockup {
     max-width: 59rem;
@@ -246,3 +266,5 @@ select:focus-visible {
     transition-duration: .01ms !important;
   }
 }
+
+
