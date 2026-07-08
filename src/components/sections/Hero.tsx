@@ -1,7 +1,10 @@
-﻿import { FiArrowUpRight } from 'react-icons/fi';
-import { ButtonLink } from '../ui/Button';
+﻿import { FiArrowUpRight, FiMail } from 'react-icons/fi';
+import { FaWhatsapp } from 'react-icons/fa6';
+import { ButtonAnchor, ButtonLink } from '../ui/Button';
 import { Reveal } from '../animations/Reveal';
 import { CodeWindow } from './CodeWindow';
+import { whatsappUrl } from '../../data/socials';
+import { site } from '../../constants/site';
 
 export function Hero() {
   return (
@@ -19,8 +22,12 @@ export function Hero() {
         </p>
         <div className="mt-9 flex flex-wrap gap-3">
           <ButtonLink to="/projects">View My Work <FiArrowUpRight /></ButtonLink>
-          <ButtonLink to="/contact" variant="ghost">WhatsApp</ButtonLink>
-          <ButtonLink to="/contact" variant="ghost">Email</ButtonLink>
+          <ButtonAnchor href={whatsappUrl} target="_blank" rel="noreferrer" variant="ghost" aria-label="Message Enoch on WhatsApp">
+            <FaWhatsapp /> WhatsApp
+          </ButtonAnchor>
+          <ButtonAnchor href={`mailto:${site.email}`} variant="ghost" aria-label="Email Enoch">
+            <FiMail /> Email
+          </ButtonAnchor>
         </div>
       </Reveal>
       <Reveal className="mt-10 max-w-[52rem]">
@@ -29,4 +36,3 @@ export function Hero() {
     </section>
   );
 }
-

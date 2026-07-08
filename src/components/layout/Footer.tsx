@@ -11,7 +11,8 @@ export function Footer() {
         <p className="text-muted">© 2026 Enoch Wanjala. Built for performance.</p>
         <div className="flex flex-wrap gap-6">
           {socials.slice(0, 3).map((social) => (
-            <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="hover:text-mint">
+            <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-muted hover:text-mint">
+              <social.icon aria-hidden />
               {social.label}
             </a>
           ))}
@@ -20,4 +21,3 @@ export function Footer() {
     </footer>
   );
 }
-

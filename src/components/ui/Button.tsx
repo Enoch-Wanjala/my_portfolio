@@ -4,6 +4,7 @@ import { cn } from '../../utils/cn';
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & { variant?: 'primary' | 'ghost'; children: ReactNode };
 type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & { to: string; variant?: 'primary' | 'ghost'; children: ReactNode };
+type AnchorProps = AnchorHTMLAttributes<HTMLAnchorElement> & { href: string; variant?: 'primary' | 'ghost'; children: ReactNode };
 
 const styles = {
   primary: 'bg-[#22c55e] text-[#004b1e] hover:bg-[#4be277] active:scale-95',
@@ -22,3 +23,10 @@ export function ButtonLink({ className, variant = 'primary', to, children, ...pr
   );
 }
 
+export function ButtonAnchor({ className, variant = 'primary', href, children, ...props }: AnchorProps) {
+  return (
+    <a className={cn('btn', styles[variant], className)} href={href} {...props}>
+      {children}
+    </a>
+  );
+}
