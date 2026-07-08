@@ -101,8 +101,22 @@ select:focus-visible {
     transition: transform .25s ease, background .25s ease, border-color .25s ease, color .25s ease;
   }
 
+  .btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .16), transparent);
+    transform: translateX(-120%);
+    transition: transform .45s ease;
+  }
+
   .btn:hover {
     transform: translateY(-2px);
+  }
+
+  .btn:hover::after {
+    transform: translateX(120%);
   }
 
   .nav-link {
@@ -184,4 +198,5 @@ select:focus-visible {
     transition-duration: .01ms !important;
   }
 }
+
 

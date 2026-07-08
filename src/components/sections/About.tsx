@@ -8,7 +8,7 @@ export function About() {
       <Reveal>
         <div className="relative border border-line bg-panel p-3">
           <div className="absolute -left-4 -top-4 h-16 w-32 border-l border-t border-mint/40" />
-          <img src="/portrait-placeholder.svg" alt="Enoch Wanjala portrait placeholder" className="aspect-[4/5] w-full object-cover" loading="lazy" />
+          <img src="/portrait.jpg" alt="Portrait of Enoch Wanjala working on a laptop" className="aspect-[4/5] w-full object-cover object-[50%_18%]" loading="lazy" />
         </div>
       </Reveal>
       <Reveal>

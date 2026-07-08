@@ -1,4 +1,4 @@
-export const site = {
+﻿export const site = {
   name: 'Enoch.dev',
   author: 'Enoch Wanjala',
   title: 'Enoch Wanjala — Frontend Engineer',

@@ -1,4 +1,4 @@
-# Enoch Wanjala Portfolio
+﻿# Enoch Wanjala Portfolio
 
 A modern frontend portfolio for Enoch Wanjala, built as a fast, accessible, responsive React application. The site presents selected projects, technical skills, professional experience, and a validated contact workflow in a polished developer-focused interface.
 
@@ -11,7 +11,8 @@ A modern frontend portfolio for Enoch Wanjala, built as a fast, accessible, resp
 - Experience timeline
 - Skills and services sections
 - Accessible contact form with validation
-- EmailJS-ready contact submission
+- Contact form delivery to `developermwilwaji@gmail.com`
+- EmailJS support with FormSubmit fallback for static hosting
 - SEO metadata per route with Open Graph and Twitter Cards
 - Structured data with JSON-LD
 - PWA manifest, service worker, and install prompt
@@ -34,7 +35,7 @@ A modern frontend portfolio for Enoch Wanjala, built as a fast, accessible, resp
 - Zod
 - React Icons
 - Lenis
-- EmailJS
+- EmailJS / FormSubmit
 - ESLint
 - Prettier
 - Husky
@@ -121,12 +122,13 @@ Create a `.env.local` file from `.env.example`:
 
 ```bash
 VITE_SITE_URL=https://your-domain.com
+VITE_CONTACT_TO_EMAIL=developermwilwaji@gmail.com
 VITE_EMAILJS_PUBLIC_KEY=your_public_key
 VITE_EMAILJS_SERVICE_ID=your_service_id
 VITE_EMAILJS_TEMPLATE_ID=your_template_id
 ```
 
-If EmailJS variables are not configured, the contact form uses a safe simulated success state so the UI can still be tested locally.
+If EmailJS variables are configured, the contact form sends through EmailJS and passes `to_email` as `developermwilwaji@gmail.com` by default. If EmailJS variables are not configured, the app falls back to FormSubmit for static-site delivery. FormSubmit may send a one-time activation email the first time the form is used.
 
 ## Content Management
 
@@ -152,6 +154,14 @@ Recommended settings:
 - Output Directory: `dist`
 - Install Command: `npm install`
 
+Add this environment variable in Vercel:
+
+```bash
+VITE_CONTACT_TO_EMAIL=developermwilwaji@gmail.com
+```
+
+Add EmailJS variables too if you prefer EmailJS over the FormSubmit fallback.
+
 The included `vercel.json` rewrites all routes to `index.html`, which keeps React Router deep links working after deployment.
 
 ### Netlify or Cloudflare Pages
@@ -172,4 +182,4 @@ Both commands should complete successfully.
 
 ## License
 
-This project is intended for Enoch Wanjala’s personal portfolio.
+This project is intended for Enoch Wanjala's personal portfolio.
