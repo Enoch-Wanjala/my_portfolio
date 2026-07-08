@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { navigation } from '../../data/navigation';
@@ -11,19 +11,19 @@ export function Navbar() {
   const hidden = useScrollDirection();
 
   return (
-    <header className={cn('sticky top-0 z-50 border-b border-line bg-ink/86 backdrop-blur-xl transition-transform', hidden && '-translate-y-full')}>
-      <nav className="mx-auto flex h-20 max-w-[1240px] items-center justify-between px-5 sm:px-8" aria-label="Primary navigation">
-        <NavLink to="/" className="font-mono text-sm font-bold uppercase tracking-tight text-mint">
+    <header className={cn('sticky top-0 z-50 border-b border-line bg-ink/95 backdrop-blur-sm transition-transform', hidden && '-translate-y-full')}>
+      <nav className="mx-auto flex h-[4.65rem] max-w-[1120px] items-center justify-between px-5 sm:px-8" aria-label="Primary navigation">
+        <NavLink to="/" className="font-mono text-[.82rem] font-bold uppercase tracking-tight text-mint">
           Enoch.dev
         </NavLink>
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="hidden items-center gap-9 md:flex">
           {navigation.map((item) => (
             <NavLink key={item.href} to={item.href} className={({ isActive }) => cn('nav-link', isActive && 'text-mint underline underline-offset-8')}>
               {item.label}
             </NavLink>
           ))}
         </div>
-        <ButtonLink to="/contact" className="hidden md:inline-flex">Contact</ButtonLink>
+        <ButtonLink to="/contact" className="hidden min-h-11 px-8 md:inline-flex">Contact</ButtonLink>
         <button className="grid size-11 place-items-center border border-line text-white md:hidden" aria-label="Toggle menu" onClick={() => setOpen((value) => !value)}>
           {open ? <FiX /> : <FiMenu />}
         </button>
@@ -42,3 +42,4 @@ export function Navbar() {
     </header>
   );
 }
+

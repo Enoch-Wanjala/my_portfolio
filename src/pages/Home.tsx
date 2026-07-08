@@ -3,7 +3,7 @@ import { SEO } from '../components/common/SEO';
 import { PageTransition } from '../components/animations/PageTransition';
 import { Hero } from '../components/sections/Hero';
 import { About } from '../components/sections/About';
-import { TechStack } from '../components/sections/TechStack';
+import { HomeTechEcosystem } from '../components/sections/HomeTechEcosystem';
 import { CTA } from '../components/sections/CTA';
 import { pageSeo } from '../lib/seo';
 
@@ -15,7 +15,7 @@ export default function Home() {
       <Container>
         <Hero />
         <About />
-        <TechStack />
+        <HomeTechEcosystem />
         <CTA />
       </Container>
     </PageTransition>

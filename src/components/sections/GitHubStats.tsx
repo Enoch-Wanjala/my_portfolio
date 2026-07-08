@@ -1,4 +1,4 @@
-import { FiExternalLink, FiTerminal } from 'react-icons/fi';
+﻿import { FiExternalLink, FiTerminal } from 'react-icons/fi';
 import { ButtonLink } from '../ui/Button';
 import { Card } from '../ui/Card';
 import { Reveal } from '../animations/Reveal';
@@ -13,10 +13,10 @@ const rows = [
 export function GitHubStats() {
   return (
     <Reveal>
-      <Card className="my-fluid grid items-center gap-12 p-8 sm:p-12 lg:grid-cols-[1.2fr_.8fr]">
+      <Card className="my-fluid grid items-center gap-12 p-8 sm:p-12 lg:grid-cols-[1.25fr_.75fr]">
         <div>
           <p className="eyebrow flex items-center gap-3"><FiTerminal /> github_engine</p>
-          <h2 className="mt-10 text-title font-black tracking-[-.05em]">Code Beyond the Interface</h2>
+          <h2 className="mt-10 text-title-sm font-black tracking-[-.055em]">Code Beyond the Interface</h2>
           <p className="mt-6 max-w-2xl leading-8 text-muted">I maintain strict coding standards and a commitment to continuous learning. Explore repositories to see how I solve complex engineering problems.</p>
           <div className="mt-8 flex flex-wrap gap-4">
             <ButtonLink to="/projects">Explore Repositories <FiExternalLink /></ButtonLink>
@@ -36,3 +36,4 @@ export function GitHubStats() {
     </Reveal>
   );
 }
+

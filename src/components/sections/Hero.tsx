@@ -1,19 +1,19 @@
-import { FiArrowUpRight } from 'react-icons/fi';
+﻿import { FiArrowUpRight } from 'react-icons/fi';
 import { ButtonLink } from '../ui/Button';
 import { Reveal } from '../animations/Reveal';
 import { CodeWindow } from './CodeWindow';
 
 export function Hero() {
   return (
-    <section className="min-h-[calc(100vh-5rem)] py-fluid">
-      <Reveal className="max-w-5xl">
+    <section className="py-fluid">
+      <Reveal className="home-hero-lockup">
         <p className="eyebrow before:mr-3 before:inline-block before:h-px before:w-10 before:bg-mint before:align-middle">
           Frontend engineer & UI developer
         </p>
-        <h1 className="mt-6 text-balance text-hero font-black leading-[.92] tracking-[-.07em]">
+        <h1 className="mt-6 text-balance text-hero font-black leading-[.92] tracking-[-.065em]">
           Building <span className="text-mint">Modern Websites</span> That Leave Lasting Impressions.
         </h1>
-        <p className="mt-7 max-w-2xl text-pretty leading-8 text-muted">
+        <p className="mt-7 max-w-[43rem] text-pretty text-[1.02rem] leading-8 text-muted">
           I help individuals, brands, and businesses establish a strong online presence through clean,
           responsive, and user-friendly websites designed to engage visitors and support business growth.
         </p>
@@ -23,9 +23,10 @@ export function Hero() {
           <ButtonLink to="/contact" variant="ghost">Email</ButtonLink>
         </div>
       </Reveal>
-      <Reveal className="mt-10 max-w-4xl">
+      <Reveal className="mt-10 max-w-[52rem]">
         <CodeWindow />
       </Reveal>
     </section>
   );
 }
+

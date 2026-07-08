@@ -1,26 +1,27 @@
-import type { Config } from 'tailwindcss';
+﻿import type { Config } from 'tailwindcss';
 
 export default {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
   theme: {
     extend: {
       colors: {
-        ink: '#08090a',
-        panel: '#151719',
-        panel2: '#1d1f21',
-        line: 'rgba(255,255,255,.11)',
-        mint: '#2ad36d',
-        muted: '#a8adb4'
+        ink: '#101112',
+        panel: '#1f2022',
+        panel2: '#262729',
+        line: 'rgba(255,255,255,.12)',
+        mint: '#25c765',
+        muted: '#b5b8bd'
       },
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        sans: ['Inter Tight', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'monospace']
       },
       boxShadow: {
-        glow: '0 0 42px rgba(42, 211, 109, .18)',
-        card: '0 24px 70px rgba(0,0,0,.34)'
+        glow: '0 0 42px rgba(37, 199, 101, .16)',
+        card: '0 18px 46px rgba(0,0,0,.24)'
       }
     }
   },
   plugins: []
 } satisfies Config;
+

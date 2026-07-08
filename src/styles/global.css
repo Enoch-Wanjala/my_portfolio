@@ -1,15 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap');
 @import "tailwindcss";
 
 :root {
   color-scheme: dark;
-  --hero: clamp(3.1rem, 9vw, 7.2rem);
-  --title: clamp(2.2rem, 5vw, 4rem);
-  --title-sm: clamp(1.9rem, 3.8vw, 3rem);
-  --card-title: clamp(1.8rem, 3.2vw, 2.6rem);
-  --stat: clamp(2.4rem, 5vw, 4rem);
-  --fluid: clamp(4.5rem, 10vw, 9rem);
-  --fluid-sm: clamp(3rem, 7vw, 6rem);
+  --ink: #101112;
+  --ink-deep: #0a0b0c;
+  --panel: #1f2022;
+  --panel-soft: #191a1c;
+  --line: rgba(255, 255, 255, .12);
+  --mint: #25c765;
+  --muted: #b5b8bd;
+  --hero: clamp(3rem, 7.3vw, 5.85rem);
+  --title: clamp(2.25rem, 4.8vw, 4.15rem);
+  --title-sm: clamp(2rem, 3.7vw, 3rem);
+  --card-title: clamp(1.85rem, 3vw, 2.55rem);
+  --stat: clamp(2.65rem, 4.8vw, 4.25rem);
+  --fluid: clamp(5.25rem, 9vw, 8.25rem);
+  --fluid-sm: clamp(3.75rem, 6.4vw, 5.75rem);
 }
 
 * {
@@ -17,7 +24,7 @@
 }
 
 html {
-  background: #08090a;
+  background: var(--ink);
   scroll-behavior: smooth;
 }
 
@@ -25,11 +32,9 @@ body {
   margin: 0;
   min-width: 320px;
   overflow-x: hidden;
-  background:
-    radial-gradient(circle at 80% 0%, rgba(42, 211, 109, .09), transparent 28rem),
-    linear-gradient(180deg, #101113 0%, #08090a 28rem);
-  color: #f4f4f5;
-  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  background: var(--ink);
+  color: #f2f2f3;
+  font-family: 'Inter Tight', ui-sans-serif, system-ui, sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
@@ -57,13 +62,13 @@ a:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 2px solid #2ad36d;
+  outline: 2px solid var(--mint);
   outline-offset: 4px;
 }
 
 ::selection {
-  background: #2ad36d;
-  color: #08090a;
+  background: var(--mint);
+  color: var(--ink);
 }
 
 @layer utilities {
@@ -85,12 +90,13 @@ select:focus-visible {
     position: relative;
     isolation: isolate;
     display: inline-flex;
-    min-height: 3.4rem;
+    min-height: 3.25rem;
     align-items: center;
     justify-content: center;
     gap: .75rem;
     overflow: hidden;
-    padding-inline: 1.8rem;
+    padding-inline: 1.65rem;
+    font-size: .92rem;
     font-weight: 800;
     transition: transform .25s ease, background .25s ease, border-color .25s ease, color .25s ease;
   }
@@ -100,45 +106,46 @@ select:focus-visible {
   }
 
   .nav-link {
+    font-size: .94rem;
     font-weight: 800;
     color: #f4f4f5;
     transition: color .2s ease;
   }
 
   .nav-link:hover {
-    color: #2ad36d;
+    color: var(--mint);
   }
 
   .eyebrow {
     font-family: 'JetBrains Mono', ui-monospace, monospace;
-    color: #2ad36d;
-    font-size: .78rem;
+    color: var(--mint);
+    font-size: .72rem;
     font-weight: 700;
     letter-spacing: .12em;
     text-transform: uppercase;
   }
 
   .terminal-card {
-    border: 1px solid rgba(255, 255, 255, .11);
+    border: 1px solid var(--line);
     background:
-      linear-gradient(rgba(42, 211, 109, .035) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(42, 211, 109, .035) 1px, transparent 1px),
-      #151719;
+      linear-gradient(rgba(37, 199, 101, .03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(37, 199, 101, .03) 1px, transparent 1px),
+      var(--panel-soft);
     background-size: 10px 10px;
   }
 
   .field {
     width: 100%;
     border: 1px solid rgba(255, 255, 255, .12);
-    background: #090a0b;
-    padding: 1rem 1.1rem;
+    background: #0c0d0e;
+    padding: 1.15rem 1.1rem;
     color: white;
     transition: border-color .2s ease, box-shadow .2s ease;
   }
 
   .field:focus {
-    border-color: #2ad36d;
-    box-shadow: 0 0 0 4px rgba(42, 211, 109, .12);
+    border-color: var(--mint);
+    box-shadow: 0 0 0 4px rgba(37, 199, 101, .12);
     outline: none;
   }
 
@@ -154,10 +161,16 @@ select:focus-visible {
 
   .form-control span {
     color: #fca5a5;
-    font-family: Inter, sans-serif;
+    font-family: 'Inter Tight', sans-serif;
     font-size: .85rem;
     letter-spacing: 0;
     text-transform: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-hero-lockup {
+    max-width: 59rem;
   }
 }
 
@@ -171,3 +184,4 @@ select:focus-visible {
     transition-duration: .01ms !important;
   }
 }
+
