@@ -155,7 +155,7 @@ select:focus-visible {
     padding-inline: 1.75rem;
     font-size: .95rem;
     font-weight: 800;
-    transition: transform .2s ease, filter .2s ease, background .2s ease, border-color .2s ease, color .2s ease;
+    transition: transform .2s ease, background .2s ease, border-color .2s ease, color .2s ease, box-shadow .2s ease;
   }
 
   .btn::after {
@@ -163,14 +163,14 @@ select:focus-visible {
     position: absolute;
     inset: 0;
     z-index: -1;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .18), transparent);
+    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, .14), transparent);
     transform: translateX(-120%);
     transition: transform .45s ease;
   }
 
   .btn:hover {
-    filter: brightness(1.08);
     transform: translateY(-1px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .18);
   }
 
   .btn:hover::after {
@@ -274,6 +274,7 @@ select:focus-visible {
     transition-duration: .01ms !important;
   }
 }
+
 
 
 

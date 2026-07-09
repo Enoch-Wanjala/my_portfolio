@@ -13,7 +13,7 @@ export function Navbar() {
 
   return (
     <header className={cn('sticky top-0 z-50 border-b border-line bg-ink/95 backdrop-blur-md transition-transform', hidden && '-translate-y-full')}>
-      <nav className="mx-auto flex h-[4.65rem] max-w-[1120px] items-center justify-between px-5 sm:px-8" aria-label="Primary navigation">
+      <nav className="mx-auto flex h-[4.65rem] max-w-[1200px] items-center justify-between px-5 sm:px-8" aria-label="Primary navigation">
         <NavLink to="/" className="transition-opacity hover:opacity-90" aria-label="developer mwilwaji home">
           <BrandLogo />
         </NavLink>
@@ -43,3 +43,4 @@ export function Navbar() {
     </header>
   );
 }
+

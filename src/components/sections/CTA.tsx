@@ -11,7 +11,7 @@ export function CTA() {
           <p className="mx-auto mb-12 max-w-xl text-base leading-[1.6] text-muted">Let’s talk about how we can build something incredible together that helps your business thrive online.</p>
           <div className="flex flex-col items-center justify-center gap-4 md:flex-row">
             <ButtonLink to="/contact" className="px-12 py-4 text-lg">Get In Touch</ButtonLink>
-            <a href="/resume.pdf" className="font-mono text-xs uppercase tracking-[.05em] text-mint transition-colors hover:text-[#6bff8f] hover:underline">Download Resume (.PDF)</a>
+            <a href="/resume.pdf" className="font-mono text-xs uppercase tracking-[.05em] text-mint transition-colors hover:text-[#15803d] hover:underline">Download Resume (.PDF)</a>
           </div>
         </div>
       </section>

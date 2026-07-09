@@ -7,8 +7,8 @@ type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & { to: string; variant
 type AnchorProps = AnchorHTMLAttributes<HTMLAnchorElement> & { href: string; variant?: 'primary' | 'ghost'; children: ReactNode };
 
 const styles = {
-  primary: 'bg-[#22c55e] text-[#004b1e] hover:bg-[#4be277] active:scale-95',
-  ghost: 'border border-line bg-transparent text-[#e5e1e4] hover:border-mint hover:text-mint'
+  primary: 'bg-[#22c55e] text-[#004b1e] hover:bg-[#15803d] hover:text-[#e5e1e4] active:scale-95',
+  ghost: 'border border-line bg-transparent text-[#e5e1e4] hover:border-mint hover:bg-[#201f22] hover:text-mint'
 };
 
 export function Button({ className, variant = 'primary', ...props }: ButtonProps) {

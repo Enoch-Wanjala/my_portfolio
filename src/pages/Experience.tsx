@@ -1,4 +1,4 @@
-import { Container } from '../components/layout/Container';
+﻿import { Container } from '../components/layout/Container';
 import { PageHeader } from '../components/layout/PageHeader';
 import { SEO } from '../components/common/SEO';
 import { PageTransition } from '../components/animations/PageTransition';
@@ -13,10 +13,13 @@ export default function Experience() {
       <SEO {...seo} />
       <Container>
         <PageHeader eyebrow="portfolio v2.0" title="Work &" accent="Experience." description="A selection of digital products and engineering roles focused on frontend excellence, performance optimization, and scalable UI architectures." />
-        <div className="grid gap-8 lg:grid-cols-[.28fr_1fr]">
-          <h2 className="text-title-sm font-black tracking-[-.05em]">Selected Projects</h2>
+        <section className="pb-fluid-sm">
+          <div className="mb-12 flex items-center gap-4">
+            <h2 className="max-w-[12rem] text-title-sm font-black leading-[1.12] tracking-[-.04em] text-[#e5e1e4]">Selected Projects</h2>
+            <div className="hidden h-px flex-1 bg-line md:block" aria-hidden />
+          </div>
           <ProjectGrid />
-        </div>
+        </section>
         <ExperienceTimeline />
       </Container>
     </PageTransition>

@@ -11,7 +11,7 @@ export function ProjectGrid({ filterable = false }: { filterable?: boolean }) {
   const visible = useMemo(() => (filter === 'All' ? projects : projects.filter((project) => project.tags.includes(filter))), [filter]);
 
   return (
-    <section className={cn(filterable ? 'pb-fluid-sm' : 'pb-fluid-sm lg:pt-0')}>
+    <section className={cn(filterable ? 'pb-fluid-sm' : '')}>
       {filterable && (
         <div className="mb-10 flex flex-wrap gap-3">
           {filters.map((item) => (
@@ -38,3 +38,4 @@ export function ProjectGrid({ filterable = false }: { filterable?: boolean }) {
     </section>
   );
 }
+
