@@ -8,15 +8,15 @@ import { site } from '../../constants/site';
 
 export function Hero() {
   return (
-    <section className="py-fluid">
+    <section className="py-12 md:py-32">
       <Reveal className="home-hero-lockup">
         <p className="eyebrow before:mr-3 before:inline-block before:h-px before:w-10 before:bg-mint before:align-middle">
           Frontend engineer & UI developer
         </p>
-        <h1 className="mt-6 text-balance text-hero font-black leading-[.92] tracking-[-.065em]">
+        <h1 className="mt-6 max-w-4xl text-balance text-hero font-black leading-[1.08] tracking-[-.04em] text-[#e5e1e4]">
           Building <span className="text-mint">Modern Websites</span> That Leave Lasting Impressions.
         </h1>
-        <p className="mt-7 max-w-[43rem] text-pretty text-[1.02rem] leading-8 text-muted">
+        <p className="mt-7 max-w-[43rem] text-pretty text-base leading-[1.6] text-muted md:text-[1.02rem]">
           I help individuals, brands, and businesses establish a strong online presence through clean,
           responsive, and user-friendly websites designed to engage visitors and support business growth.
         </p>
@@ -30,7 +30,7 @@ export function Hero() {
           </ButtonAnchor>
         </div>
       </Reveal>
-      <Reveal className="mt-10 max-w-[52rem]">
+      <Reveal className="mt-20 max-w-[52rem]">
         <CodeWindow />
       </Reveal>
     </section>

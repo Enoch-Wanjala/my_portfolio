@@ -42,9 +42,11 @@ export function ContactForm() {
   };
 
   return (
-    <form onSubmit={(event) => void handleSubmit(onSubmit)(event)} className="terminal-card p-6 sm:p-10" noValidate>
-      <h2 className="border-l-4 border-mint pl-5 text-2xl font-bold uppercase tracking-[.18em] sm:text-3xl">Inquiry_Form</h2>
-      <div className="mt-10 grid gap-6 sm:grid-cols-2">
+    <form onSubmit={(event) => void handleSubmit(onSubmit)(event)} className="relative border border-[#353437] bg-panel p-8 md:p-12" noValidate>
+      <div className="absolute right-0 top-0 p-4 font-mono text-[10px] text-outline opacity-30">FORM_ID: 0x22C55E</div>
+      <h2 className="mb-8 border-l-4 border-mint pl-4 text-[24px] font-bold uppercase tracking-widest text-[#e5e1e4] md:text-[28px]">Inquiry_Form</h2>
+
+      <div className="grid gap-6 md:grid-cols-2">
         <label className="form-control">
           Full_Name
           <Input placeholder="John Doe" autoComplete="name" {...register('name')} />
@@ -56,23 +58,26 @@ export function ContactForm() {
           {errors.email && <span>{errors.email.message}</span>}
         </label>
       </div>
+
       <label className="form-control mt-6">
         Subject
-        <select className="field" {...register('subject')}>
+        <select className="field appearance-none" {...register('subject')}>
           {contactInfo.subjects.map((subject) => (
             <option key={subject}>{subject}</option>
           ))}
         </select>
         {errors.subject && <span>{errors.subject.message}</span>}
       </label>
+
       <label className="form-control mt-6">
         Message_Payload
-        <Textarea placeholder="Describe your technical requirements..." {...register('message')} />
+        <Textarea placeholder="Describe your technical requirements..." rows={5} {...register('message')} />
         {errors.message && <span>{errors.message.message}</span>}
       </label>
+
       <input className="hidden" tabIndex={-1} autoComplete="off" {...register('website')} aria-hidden="true" />
-      <Button className="mt-8 w-full justify-center tracking-[.35em]" disabled={isSubmitting}>
-        {isSubmitting ? 'TRANSMITTING...' : 'INITIALIZE_SEND'}
+      <Button className="mt-8 w-full justify-center py-5 text-[18px] uppercase tracking-[.2em]" disabled={isSubmitting}>
+        {isSubmitting ? 'PROCESSING...' : 'INITIALIZE_SEND'}
       </Button>
       {status === 'success' && <p className="mt-5 text-mint" role="status">Message queued successfully. I’ll respond soon.</p>}
       {status === 'error' && <p className="mt-5 text-red-300" role="alert">Transmission failed. Please email me directly.</p>}

@@ -110,9 +110,12 @@ select:focus-visible {
     color: #22c55e;
     transform: translateY(-2px);
   }
-
   .animate-flicker {
     animation: flicker 2s infinite;
+  }
+
+  .animate-pulse-green {
+    animation: pulse-subtle 2s infinite ease-in-out;
   }
 
   .glass-panel {
@@ -245,6 +248,11 @@ select:focus-visible {
   }
 }
 
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .5; transform: scale(1.2); }
+}
+
 @keyframes flicker {
   0%, 100% { opacity: 1; }
   50% { opacity: .7; }
@@ -266,5 +274,8 @@ select:focus-visible {
     transition-duration: .01ms !important;
   }
 }
+
+
+
 
 

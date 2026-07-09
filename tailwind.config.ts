@@ -11,6 +11,7 @@ export default {
         panel: '#201f22',
         panel2: '#2a2a2c',
         line: '#3d4a3d',
+        outline: '#869585',
         mint: '#4be277',
         primary: '#4be277',
         primaryContainer: '#22c55e',
@@ -36,3 +37,4 @@ export default {
   },
   plugins: []
 } satisfies Config;
+

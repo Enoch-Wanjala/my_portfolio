@@ -4,6 +4,7 @@ import { FiMenu, FiX } from 'react-icons/fi';
 import { navigation } from '../../data/navigation';
 import { useScrollDirection } from '../../hooks/useScrollDirection';
 import { ButtonLink } from '../ui/Button';
+import { BrandLogo } from '../ui/BrandLogo';
 import { cn } from '../../utils/cn';
 
 export function Navbar() {
@@ -11,10 +12,10 @@ export function Navbar() {
   const hidden = useScrollDirection();
 
   return (
-    <header className={cn('sticky top-0 z-50 border-b border-line bg-ink/95 backdrop-blur-sm transition-transform', hidden && '-translate-y-full')}>
+    <header className={cn('sticky top-0 z-50 border-b border-line bg-ink/95 backdrop-blur-md transition-transform', hidden && '-translate-y-full')}>
       <nav className="mx-auto flex h-[4.65rem] max-w-[1120px] items-center justify-between px-5 sm:px-8" aria-label="Primary navigation">
-        <NavLink to="/" className="font-mono text-[.82rem] font-bold uppercase tracking-tight text-mint">
-          Enoch.dev
+        <NavLink to="/" className="transition-opacity hover:opacity-90" aria-label="developer mwilwaji home">
+          <BrandLogo />
         </NavLink>
         <div className="hidden items-center gap-9 md:flex">
           {navigation.map((item) => (
@@ -32,7 +33,7 @@ export function Navbar() {
         <div className="overflow-hidden">
           <div className="flex flex-col gap-3 p-5">
             {[...navigation, { label: 'Contact', href: '/contact' }].map((item) => (
-              <NavLink key={item.href} to={item.href} onClick={() => setOpen(false)} className="border border-line p-4 text-white">
+              <NavLink key={item.href} to={item.href} onClick={() => setOpen(false)} className="border border-line bg-[#0e0e10] p-4 font-mono text-xs uppercase tracking-widest text-white hover:border-mint hover:text-mint">
                 {item.label}
               </NavLink>
             ))}
@@ -42,4 +43,3 @@ export function Navbar() {
     </header>
   );
 }
-

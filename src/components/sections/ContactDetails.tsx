@@ -2,7 +2,6 @@
 import { FaWhatsapp } from 'react-icons/fa6';
 import { contactInfo } from '../../data/contact';
 import { socials, whatsappUrl } from '../../data/socials';
-import { Card } from '../ui/Card';
 import { copyToClipboard } from '../../utils/copy';
 
 const phoneHref = `tel:+254${contactInfo.phone.slice(1)}`;
@@ -33,16 +32,16 @@ const communicationRows = [
 
 export function ContactDetails() {
   return (
-    <div className="space-y-6">
-      <Card>
-        <p className="eyebrow">direct_communications</p>
-        <div className="mt-6 space-y-6">
+    <div className="flex flex-col gap-6">
+      <section className="group border border-[#353437] bg-panel p-8 transition-colors duration-500 hover:border-mint">
+        <p className="mb-6 font-mono text-xs uppercase tracking-widest text-mint">Direct_Communications</p>
+        <div className="space-y-8">
           {communicationRows.map(({ label, value, href, copyValue, icon: Icon }) => (
             <div key={label} className="grid grid-cols-[auto_1fr_auto] gap-4">
               <Icon className="mt-1 text-2xl text-mint" aria-hidden />
               <div>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-muted">{label}</p>
-                <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noreferrer' : undefined} className="mt-1 block break-all text-lg font-bold hover:text-mint">
+                <p className="mb-1 font-mono text-[10px] uppercase text-outline">{label}</p>
+                <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noreferrer' : undefined} className="block break-all text-base text-[#e5e1e4] transition-colors hover:text-mint">
                   {value}
                 </a>
               </div>
@@ -50,19 +49,24 @@ export function ContactDetails() {
             </div>
           ))}
         </div>
-      </Card>
-      <Card>
-        <p className="eyebrow">digital_footprint</p>
-        <div className="mt-6 grid gap-4 sm:grid-cols-3">
-          {socials.slice(0, 3).map((social) => (
-            <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="flex items-center gap-3 border border-line bg-[#0e0e10] px-5 py-4 font-mono text-sm hover:border-mint hover:text-mint">
-              <social.icon className={social.label === 'WhatsApp' ? 'text-mint' : undefined} /> {social.label}
+      </section>
+
+      <section className="border border-[#353437] bg-panel p-8">
+        <p className="mb-6 font-mono text-xs uppercase tracking-widest text-mint">Digital_Footprint</p>
+        <div className="grid grid-cols-2 gap-4">
+          {socials.slice(0, 2).map((social) => (
+            <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="group flex items-center gap-3 border border-[#353437] bg-[#0e0e10] p-4 font-mono text-xs uppercase tracking-[.05em] transition-all hover:border-mint hover:text-mint">
+              <social.icon className="transition-colors group-hover:text-mint" aria-hidden />
+              {social.label}
             </a>
           ))}
         </div>
-      </Card>
-      <div className="hidden aspect-video border border-line bg-[radial-gradient(circle_at_50%_50%,rgba(74,226,119,.18),transparent_50%)] lg:block">
-        <p className="mt-[42%] px-4 font-mono text-[10px] uppercase tracking-widest text-muted">neural_net_visualization_v01</p>
+      </section>
+
+      <div className="relative hidden h-48 overflow-hidden border border-[#353437] lg:block">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(74,226,119,.18),transparent_50%)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent" />
+        <p className="absolute bottom-4 left-4 font-mono text-[10px] uppercase text-outline">NEURAL_NET_VISUALIZATION_V01</p>
       </div>
     </div>
   );
