@@ -1,1 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180"><rect width="180" height="180" rx="36" fill="#08090a"/><path fill="#2ad36d" d="M44 39h92v23H72v25h52v22H72v31h66v23H44z"/></svg>
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-label="developer mwilwaji logo">
+  <rect width="180" height="180" rx="40" fill="#0e0e10"/>
+  <path fill="#22c55e" d="M100.1 24H79.9l-3.5 16.9a55.4 55.4 0 0 0-12.7 5.3L49.4 36.7 36.7 49.4l9.5 14.3a55.4 55.4 0 0 0-5.3 12.7L24 79.9v20.2l16.9 3.5a55.4 55.4 0 0 0 5.3 12.7l-9.5 14.3 12.7 12.7 14.3-9.5a55.4 55.4 0 0 0 12.7 5.3l3.5 16.9h20.2l3.5-16.9a55.4 55.4 0 0 0 12.7-5.3l14.3 9.5 12.7-12.7-9.5-14.3a55.4 55.4 0 0 0 5.3-12.7l16.9-3.5V79.9l-16.9-3.5a55.4 55.4 0 0 0-5.3-12.7l9.5-14.3-12.7-12.7-14.3 9.5a55.4 55.4 0 0 0-12.7-5.3L100.1 24Z"/>
+  <circle cx="90" cy="90" r="41" fill="#e5e1e4"/>
+  <path d="M76 70 58 90l18 20M104 70l18 20-18 20M98 64 82 116" fill="none" stroke="#004b1e" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

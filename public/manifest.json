@@ -1,11 +1,11 @@
-{
-  "name": "Enoch Wanjala Portfolio",
-  "short_name": "Enoch.dev",
+﻿{
+  "name": "Developer Mwilwaji Portfolio",
+  "short_name": "Mwilwaji.dev",
   "description": "Frontend engineer portfolio for Enoch Wanjala.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#08090a",
-  "theme_color": "#0d0f10",
+  "background_color": "#131315",
+  "theme_color": "#131315",
   "icons": [
     { "src": "/favicon.svg", "sizes": "64x64", "type": "image/svg+xml", "purpose": "any maskable" },
     { "src": "/apple-touch-icon.svg", "sizes": "180x180", "type": "image/svg+xml" }

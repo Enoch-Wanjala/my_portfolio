@@ -8,7 +8,7 @@ export function About() {
       <Reveal>
         <div className="relative">
           <div className="glass-panel relative z-10 aspect-square p-4">
-            <img src="/portrait.jpg" alt="Portrait of Enoch Wanjala working on a laptop" className="h-full w-full object-cover object-[50%_18%]" loading="lazy" />
+            <img src="/portrait.jpg" alt="Portrait of Enoch Wanjala working on a laptop" className="h-full w-full object-cover object-[50%_8%]" loading="lazy" />
           </div>
           <div className="absolute -bottom-10 -right-10 -z-10 h-full w-full border-2 border-line" aria-hidden />
           <div className="pointer-events-none absolute -left-6 -top-6 select-none text-hero font-black tracking-[-.04em] text-mint opacity-10" aria-hidden>
@@ -38,3 +38,4 @@ export function About() {
     </section>
   );
 }
+

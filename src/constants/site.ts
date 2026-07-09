@@ -1,12 +1,12 @@
 ﻿export const site = {
-  name: 'Enoch.dev',
+  name: 'Developer Mwilwaji',
   author: 'Enoch Wanjala',
-  title: 'Enoch Wanjala — Frontend Engineer',
+  title: 'Developer Mwilwaji — Frontend Engineer',
   description:
     'Frontend engineer building fast, responsive, accessible and visually precise web experiences.',
   url: String(import.meta.env.VITE_SITE_URL || 'https://example.com'),
   email: 'developermwilwaji@gmail.com',
   phone: '0706486866',
   location: 'Nairobi, Kenya',
-  themeColor: '#0d0f10'
+  themeColor: '#131315'
 } as const;
