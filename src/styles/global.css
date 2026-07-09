@@ -260,7 +260,7 @@ select:focus-visible {
 
 @media (min-width: 1024px) {
   .home-hero-lockup {
-    max-width: 59rem;
+    max-width: 56rem;
   }
 }
 
@@ -274,6 +274,7 @@ select:focus-visible {
     transition-duration: .01ms !important;
   }
 }
+
 
 
 

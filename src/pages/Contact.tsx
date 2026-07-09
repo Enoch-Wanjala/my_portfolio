@@ -17,7 +17,7 @@ function ContactHero() {
           </div>
           <span className="font-mono text-xs uppercase tracking-[.05em] text-mint">Currently Available for New Projects</span>
         </div>
-        <h1 className="mb-6 text-[48px] font-black leading-[1.1] tracking-[-.04em] text-[#e5e1e4] md:text-hero">
+        <h1 className="mb-6 max-w-4xl text-[48px] font-black leading-[1.1] tracking-[-.04em] text-[#e5e1e4] md:text-hero">
           Let’s <span className="italic text-mint">Connect.</span>
         </h1>
         <p className="max-w-2xl text-base leading-[1.6] text-muted">
@@ -47,3 +47,4 @@ export default function Contact() {
     </PageTransition>
   );
 }
+

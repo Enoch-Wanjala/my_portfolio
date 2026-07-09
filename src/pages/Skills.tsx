@@ -14,7 +14,7 @@ function SkillsHero() {
         <div className="mb-4 inline-block rounded-full border border-line px-3 py-1">
           <span className="animate-flicker font-mono text-xs uppercase tracking-widest text-mint">Available for Hire</span>
         </div>
-        <h1 className="mb-6 max-w-3xl text-hero font-black leading-[1.1] tracking-[-.04em] text-[#e5e1e4]">
+        <h1 className="mb-6 max-w-4xl text-hero font-black leading-[1.1] tracking-[-.04em] text-[#e5e1e4]">
           Expertise <span className="text-mint">&</span> Capabilities.
         </h1>
         <p className="max-w-2xl text-base leading-[1.6] text-muted">
@@ -39,3 +39,4 @@ export default function Skills() {
     </PageTransition>
   );
 }
+
